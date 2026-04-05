@@ -7,6 +7,9 @@ WORKDIR /app
 # Copy package files
 COPY package*.json ./
 
+# Add this line to install Git
+RUN apk add --no-cache git
+
 # Install dependencies
 RUN npm ci --only=production
 
