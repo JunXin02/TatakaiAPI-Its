@@ -8,7 +8,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Add this line to install Git
-RUN apk add --no-cache git
+RUN apk add --no-cache git openssh-client
 
 # Install dependencies
 RUN npm ci --only=production
