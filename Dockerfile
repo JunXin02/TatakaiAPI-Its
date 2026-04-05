@@ -10,6 +10,9 @@ COPY package*.json ./
 # Add this line to install Git
 RUN apk add --no-cache git openssh-client
 
+# Add this line to force HTTPS instead of SSH
+RUN git config --global url."https://github.com/".insteadOf ssh://git@github.com/
+
 # Install dependencies
 RUN npm ci --only=production
 
